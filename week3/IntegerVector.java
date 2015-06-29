@@ -67,6 +67,13 @@ public class IntegerVector {
 		this.data[index] = data; 
 	}
 	
+	public void remove(int index) {
+		for (int i = index; i < size; i++) {
+			data[i] = data[i+1];
+		}
+		size--;
+	}
+	
 	public void replace(int index1, int index2) {
 		int temp = data[index1];
 		data[index1] = data[index2];
@@ -89,6 +96,8 @@ public class IntegerVector {
 		data.addAll(n);
 		System.out.println(data);
 		data.insert(10, 100);
+		System.out.println(data);
+		data.remove(1);
 		System.out.println(data);
 	}
 }

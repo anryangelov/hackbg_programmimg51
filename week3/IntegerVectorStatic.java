@@ -54,14 +54,26 @@ public class IntegerVectorStatic {
 
 	public static IntegerVector filterOdd(IntegerVector v) {
 		IntegerVector res = new IntegerVector();
+		for (int i = 0; i < v.size(); i++){
+			if (v.get(i) % 2 == 1) {
+				res.add(v.get(i));
+			}
+		}
 		return res;
 	}
 	
+	public static int sum(IntegerVector v) {
+		int res = 0;
+		for (int i = 0; i < v.size(); i++) {
+			res += v.get(i);
+		}
+		return res;
+	}
 	
 	public static void main(String[] args) {
 		IntegerVector data = new IntegerVector();
 		data.add(100);
-		int len = 3;
+		int len = 4;
 		for (int i = 0; i < len; i++) {
 			data.add(i);
 		}
@@ -74,5 +86,8 @@ public class IntegerVectorStatic {
 		System.out.println(IntegerVectorStatic.toString(r));
 		System.out.println(IntegerVectorStatic.join(data, "->"));
 		System.out.println(IntegerVectorStatic.range(10, 20));
+		IntegerVector temp = IntegerVectorStatic.filterOdd(data);
+		System.out.println(temp);
+		System.out.println(IntegerVectorStatic.sum(data));
 	}
 }
