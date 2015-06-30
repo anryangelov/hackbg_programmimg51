@@ -50,7 +50,7 @@ public class MusicOrganiser {
         String album;
 		for (int i = 0; i < albums.size(); i++) {
 			album = albums.get(i);
-			res.add(album + "-" + getAlbumSongs(album).size());
+			res.add(album + "(" + getAlbumSongs(album).size() + ")");
 		}
 		return res;
 	}
