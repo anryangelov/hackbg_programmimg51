@@ -7,6 +7,7 @@ public class LilisLibrary {
 
 	public static Vector<Pair<String, Integer>> orderBooks(Vector<String> books) {
 		Vector<Pair<String, Integer>> res = new Vector<Pair<String, Integer>>();
+		books.sort(null);
 		for (String book: books) {
 			if (! updateIfHasBook(res, book)) {
 				Pair<String, Integer> p = new Pair<String, Integer>();
