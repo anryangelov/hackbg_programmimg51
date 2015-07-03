@@ -47,7 +47,7 @@ public class MusicOrganiser {
 	public Vector<String> getAlbumsAndSongs() {
 		Vector<String> res = new Vector<String>();
 		Vector<String> albums = getAlbums();
-        String album;
+		String album;
 		for (int i = 0; i < albums.size(); i++) {
 			album = albums.get(i);
 			res.add(album + "(" + getAlbumSongs(album).size() + ")");
