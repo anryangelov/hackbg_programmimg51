@@ -19,7 +19,7 @@ public class LilisLibrary {
 		return res;
 	}
 	
-	public static boolean updateIfHasBook(Vector<Pair<String, Integer>> books, String book) {
+	private static boolean updateIfHasBook(Vector<Pair<String, Integer>> books, String book) {
 		for (Pair<String, Integer> p: books) {
 			if (p.first.equals(book)) {
 				p.second += 1;
