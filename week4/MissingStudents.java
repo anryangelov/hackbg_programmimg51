@@ -4,24 +4,40 @@ import java.util.Scanner;
 import java.util.Vector;
 
 public class MissingStudents {
-	
+
 	public static Vector<Vector<String>> missingStudents(
 			Vector<String> students, Vector<Vector<String>> presence) {
+		sort(students);
 		Vector<Vector<String>> res = new Vector<Vector<String>>();
-		for (Vector<String> presenceDay: presence) {
+		for (Vector<String> presenceDay : presence) {
 			res.add(missingStudentsDay(students, presenceDay));
 		}
 		return res;
 	}
-	
-	private static Vector<String> missingStudentsDay(Vector<String> students, Vector<String> presenceDay) {
+
+	private static Vector<String> missingStudentsDay(Vector<String> students,
+			Vector<String> presenceDay) {
 		Vector<String> res = new Vector<String>();
-		for (String student: students) {
-			if (! presenceDay.contains(student)) res.add(student);
+		for (String student : students) {
+			if (!presenceDay.contains(student))
+				res.add(student);
 		}
 		return res;
 	}
 	
+	public static void sort(Vector<String> a) {
+		  for (int i=0; i < a.size(); i++) {
+			  int temp = i;
+			  for (int j=i; j < a.size(); j++ ) {
+				  if (a.get(j).compareTo(a.get(temp)) < 0) {
+					  temp = j;
+				  }
+			  }
+			 String value = a.get(i); 
+			 a.set(i, a.get(temp));
+			 a.set(temp, value);
+		  }
+	  }
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
