@@ -4,13 +4,16 @@ public class LinkedList<T> {
 	
 	   private Node<T> head;
 	   private Node<T> tail;
+	   private int size; 
 
 	    public LinkedList(){
 	        head = null;
 	        tail = null;
+	        size = 0;
 	    }
 
 	    public String toString() {
+	    	if (head == null) return "";
 	    	String res = "";
 	    	Node <T> temp;
 	    	temp = head;
@@ -23,8 +26,7 @@ public class LinkedList<T> {
 	    
 	    private Node<T> getNode(int index) {
 	    	int count = 0;
-	    	Node <T> temp;
-	    	temp = head;
+	    	Node <T> temp = head;
 	    	while (true) {
 	    		if (count == index) break;
 	    		temp = temp.next;
@@ -38,11 +40,19 @@ public class LinkedList<T> {
 	    	Node <T> temp = new Node<>(el);
 	    	if (head == null) {
 	    		head = temp;
-	    		tail = temp;
 	    	} else {
 	    		tail.next = temp;
-	    		tail = temp;
 	    	}
+	    	tail = temp;
+	    	size += 1;
+	    }
+	    
+	    public void addLast(T el){
+	    	add(el);
+	    }
+	    
+	    public void addFirts(T el){
+	    	insert(0, el);
 	    }
 
 	    public T get(int index){
@@ -65,6 +75,7 @@ public class LinkedList<T> {
 	    	Node <T> node = getNode(index - 1);
 	    	if (node.next.next == null) tail = node;
 	    	node.next = node.next.next;
+	    	size -= 1;
 	    }
 
 	    public void insert(int index, T el){
@@ -79,7 +90,36 @@ public class LinkedList<T> {
 	    	if (node.next == null) tail = newNode;
 	    	newNode.next = node.next;
 	    	node.next = newNode;
+	    	size += 1;
 	    }
 	    
-
+	    public int size() {
+	    	return size;
+	    }
+	    
+	    public T getFisrt() {
+	    	return head.data;
+	    }
+	    
+	    public T getLast() {
+	    	return tail.data;
+	    }
+	    
+	    public int getElementIndex(T data) {
+	    	Node <T> temp = head;
+	    	int count = 0;
+	    	while (temp.next != null) {
+	    		if (data.equals(temp.data)) return count;
+	    		temp = temp.next;
+	    		count += 1;
+	    	}
+	    	if (data.equals(temp.data)) return count;
+	    	return -1;
+	    }    
+	    
+	    public boolean contains(T data) {
+	    	int index = getElementIndex(data);
+	    	if (index == -1) return false;
+	    	return true;
+	    }
 }
