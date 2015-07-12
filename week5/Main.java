@@ -3,24 +3,21 @@ package com.hackbulgaria.programming51.week5;
 public class Main {
 
 	public static void main(String[] args) {
-		LinkedList<Integer> l = new LinkedList<>();
+		LinkedList<Integer> l1 = new LinkedList<>();
+		LinkedList<Integer> l2 = new LinkedList<>();
 		for (int i = 10; i < 20; i++) {
-			l.add(i);
+			l1.add(i);
 		}
-		
-		//l.set(0, 100);
-		//l.insert(2, 21);
-		//l.insert(10, 200 );
-		//l.add(-1);
-		l.remove(8);
-		l.add(3);
-		//l.insert(0, 5);
-		System.out.println(l);
-		System.out.println(l.size());
-		System.out.println(l.getElementIndex(10));
-		// System.out.println(l.contains(10));
-		// LinkedList<Integer> res = StaticLinkedList.sort(l);
-		System.out.println(StaticLinkedList.reverse(l));
-		//System.out.println(l.get(4));
+		for (int i = 200; i < 205; i++) {
+			l2.add(i);
+		}
+		System.out.println(l1);
+		System.out.println(l2);
+		l1.insertListBefore(0, l2);
+		l1.insertListAfter(0, l2);
+		System.out.println(l1.size());
+		System.out.println(l1.getFisrt());
+		System.out.println(l1.getLast());
+		System.out.println(l1);
 	}
 }

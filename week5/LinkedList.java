@@ -122,4 +122,70 @@ public class LinkedList<T> {
 	    	if (index == -1) return false;
 	    	return true;
 	    }
+	    
+	    public T[] toArray() {
+	        // Returns an array with all the elements in the list
+	    	T [] result =  (T []) new Object [size];
+	    	if (size == 0) return result;
+	    	Node <T> temp = head;
+	    	int i = 0;
+	    	while (temp.next != null) {
+	    		result[i] = temp.data;
+	    		temp = temp.next;
+	    		i += 1;
+	    	}
+	    	result[i] = temp.data;
+	    	return result;
+	    }
+
+	    public void addArray(T[] arr) {
+	        // Appends the array at the end of the list
+	    	for (int i = 0; i < arr.length; i++) {
+	    		add(arr[i]);
+	    	}
+	    }
+	    
+	    public void clear() {
+	    	head = null;
+	    	tail = null;
+	    	size = 0;
+	    }
+	    
+	    private LinkedList<T> copy(LinkedList<T> l) {
+	    	LinkedList<T> newL = new LinkedList<T>();
+	    	if (head == null) return newL;
+	    	Node <T> temp = l.head;
+	    	while (temp.next != null) {
+	    		newL.add(temp.data);
+	    		temp = temp.next;
+	    	}
+	    	newL.add(temp.data);
+	    	return newL;	
+	    }
+
+	    public void insertListAfter(int index, LinkedList<T> l) {
+	        // Inserts all the elements of l after the index element
+	    	l = copy(l);
+	    	if (l.size == 0) return;
+	    	if (size - 1 == index) {
+	    		tail.next = l.head;
+	    		tail = l.tail;
+	    	} else {
+	    		Node <T> node = getNode(index); 
+	    		l.tail.next = node.next;
+	    		node.next = l.head;
+	    	}
+	    	size += l.size;
+	    }
+	    public void insertListBefore(int index, LinkedList<T> l){
+	        // Inserts all the elements of l before the index element
+	    	l = copy(l);
+	    	if (index == 0) {
+	    		l.tail.next = head;
+	    		head = l.head;
+	    		size += l.size;
+	    	} else {
+	    		insertListAfter(index - 1, l);
+	    	}
+	    }
 }
