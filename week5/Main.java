@@ -19,9 +19,5 @@ public class Main {
 		System.out.println(l1.getFisrt());
 		System.out.println(l1.getLast());
 		System.out.println(l1);
-		Integer [] arr = l1.toArray();
-		//for (int i = 0; i < arr.length; i++) {
-		//	System.out.println(arr[i]);
-		//}
 	}
 }
