@@ -123,19 +123,17 @@ public class LinkedList<T> {
 	    	return true;
 	    }
 	    
-	    public T[] toArray() {
+	    public void toArray(T [] arr) {
 	        // Returns an array with all the elements in the list
-	    	T [] result =  (T []) new Object [size];
-	    	if (size == 0) return result;
+	    	if (size == 0) return;
 	    	Node <T> temp = head;
 	    	int i = 0;
 	    	while (temp.next != null) {
-	    		result[i] = temp.data;
+	    		arr[i] = temp.data;
 	    		temp = temp.next;
 	    		i += 1;
 	    	}
-	    	result[i] = temp.data;
-	    	return result;
+	    	arr[i] = temp.data;
 	    }
 
 	    public void addArray(T[] arr) {
