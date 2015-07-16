@@ -19,5 +19,6 @@ public class Main {
 		System.out.println(l1.getFisrt());
 		System.out.println(l1.getLast());
 		System.out.println(l1);
+		
 	}
 }

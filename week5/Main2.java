@@ -21,7 +21,6 @@ public class Main2 {
         list2.addArray(arr);
         list1.insertListBefore(0, list2);
         list1.insertListAfter(0, list2);
-
         System.out.println(list1);
         scanner.close();
     }
