@@ -1,8 +1,8 @@
-package com.hackbulgaria.programming51.week6;
+package com.hackbulgaria.programming51.week6.zombie_apocalypse_interface;
 
 import java.util.Scanner;
 
-public class MainZombie  {
+public class Main  {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

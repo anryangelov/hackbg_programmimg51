@@ -1,15 +1,16 @@
-package com.hackbulgaria.programming51.week6;
+package com.hackbulgaria.programming51.week6.zombie_apocalypse_interface;
 
-public class Shotgun implements Weapon {
+
+public class Revolver implements Weapon{
 	
 	private int damage;
 	private int durability;
 	private int currentDurability;
 	private String type;
 	
-	public Shotgun() {
-		damage = 25;
-		durability = 10;
+	public Revolver() {
+		damage = 15;
+		durability = 6;
 		currentDurability = durability;
 		type = "TO_SHOOT";
 	}
@@ -27,5 +28,6 @@ public class Shotgun implements Weapon {
 	public String getType() {
 		return type;
 	}
+
 
 }

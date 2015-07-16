@@ -1,4 +1,5 @@
-package com.hackbulgaria.programming51.week6;
+package com.hackbulgaria.programming51.week6.zombie_apocalypse_interface;
+
 
 public class StandZombie implements Zombie {
 	
