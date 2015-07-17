@@ -2,7 +2,7 @@ package com.hackbulgaria.programming51.week6.zombie_apocalypse_inheritance;
 
 public class ToShoot extends Weapon {
 
-	{
+	public ToShoot() {
 		type = "TO_SHOOT";
 	}
 
