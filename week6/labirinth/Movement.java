@@ -1,9 +1,6 @@
 package com.hackbulgaria.programming51.week6.labirinth;
 
-public class Movement {
+public abstract class Movement {
 	
-	 public Pair<Integer> move(Pair<Integer> currentPosition) {
-	        System.out.println("Moving from the basic movement class.");
-	        return null;
-	    }
+	 public abstract Pair<Integer> move(Pair<Integer> currentPosition);
 }
