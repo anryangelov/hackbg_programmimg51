@@ -21,7 +21,7 @@ public class Canvas extends JPanel {
 
 		Rectangle2D.Double r;
 
-		int numSquares = 8;
+		int numSquares = 20;
 
 		int lenSquare = WIDTH / numSquares;
 		
